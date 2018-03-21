@@ -1,0 +1,49 @@
+<%= simple_form_for restaurant do |f| %>
+  <%= f.error_notification %>
+    <%= f.input :name %>
+    <%= f.input :category, required: true, collection: [
+      "Chinese",
+      "Japanese",
+      "Korean",
+      "Vietnamese",
+      "Indian",
+      "Other"
+      ] %>
+    <%= f.input :address %>
+    <%= f.input :district, required: true, collection: [
+      "Ahuntsic-Cartierville",
+      "Anjou",
+      "Atwater",
+      "Chinatown",
+      "Concordia",
+      "Côte-des-Neiges",
+      "Côte-Vertu",
+      "Downtown",
+      "Griffintown",
+      "Notre-Dame-de-Grace",
+      "Lachine",
+      "LaSalle",
+      "Le Plateau",
+      "Le Sud-Ouest",
+      "Sainte-Genevive",
+      "Mercier",
+      "Hochelaga-Maisonneuve",
+      "Mile-End",
+      "Namur",
+      "Outremont",
+      "Parc-Extension",
+      "Pierrefonds-Roxboro",
+      "Rivire-des-Prairies",
+      "Pointe-aux-Trembles",
+      "Rosemont",
+      "La Petite-Patrie",
+      "Saint-Laurent",
+      "Saint-Leonard",
+      "Saint-Michel",
+      "Verdun",
+      "Villeray"] %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <hr>
+    <%= f.submit class: 'btn-primary' %>
+<% end %>
