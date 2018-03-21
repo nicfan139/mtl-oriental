@@ -4,6 +4,8 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @admin = current_user.admin
     # authorize @restaurant
+
+    @reviews = Review.all
   end
 
   def new
