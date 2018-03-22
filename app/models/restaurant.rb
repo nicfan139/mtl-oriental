@@ -3,7 +3,7 @@ class Restaurant < ApplicationRecord
   has_many :recommendations, dependent: :destroy
 
   validates :name, presence: true
-  validates :category, presence: true, inclusion: { in: ["Chinese", "Japanese", "Korean", "Vietnamese", "Indian", "Other"] }
+  validates :category, presence: true
   validates :address, presence: true, length: { minimum: 10 }
   validates :district, presence: true
 

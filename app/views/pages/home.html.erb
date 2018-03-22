@@ -1,11 +1,13 @@
-<h1><strong>Welcome to MTL Oriental!</strong></h1>
-<p>Find your favourite Asian restaurants in Montreal and what's good at each place!</p>
+<!-- Render Gmap here? -->
 
-<a href="#">Can't Decide? Click Here!</a>
+<h1><strong>Welcome to MTL Oriental!</strong></h1>
+<p>A simple catalog of GOOD Asian restaurants in Montreal. See what's good at each place!</p>
+
+<a href="#">Can't decide where to eat? Click here!</a>
 
 <div class="row">
   <% @restaurants.each do |restaurant| %>
-    <div class="col-sm-6 col-md-3">
+    <div class="col-sm-6 col-md-4 col-lg-3">
       <%= link_to restaurant_path(restaurant.id) do %>
         <% if restaurant.photo? %>
           <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('<%= cl_image_path restaurant.photo %>'); background-size: cover; height: 200px">

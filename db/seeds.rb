@@ -16,6 +16,13 @@ User.create(
   admin: true
   )
 
+User.create(
+  first_name: "Testy",
+  last_name: "Test",
+  email: "test@test.com",
+  password: "test123",
+  )
+
 
 puts 'Creating Restaurants...'
 # Restaurants
@@ -87,4 +94,18 @@ Restaurant.create(
   category: "Korean",
   address: "3441 St Denis St, Montreal, QC H2X 3L1",
   district: "Plateau"
+  )
+
+Restaurant.create(
+  name: "Phayathai",
+  category: "Thai",
+  address: "1235 Guy St, Montreal, QC H3H 2K5",
+  district: "Concordia"
+  )
+
+Restaurant.create(
+  name: "Kazu",
+  category: "Japanese",
+  address: "1862 Saint-Catherine St W, Montreal, QC H3H 1M1",
+  district: "Concordia"
   )
