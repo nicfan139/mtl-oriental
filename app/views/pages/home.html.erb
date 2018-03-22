@@ -1,9 +1,11 @@
 <!-- Render Gmap here? -->
 
-<h1><strong>Welcome to MTL Oriental!</strong></h1>
-<p>A simple catalog of GOOD Asian restaurants in Montreal. See what's good at each place!</p>
+<h1>Welcome to MTL Oriental!</h1>
+<p>A catalog of GOOD Asian restaurants in Montreal. See what's great to eat at each place!</p>
 
-<a href="#">Can't decide where to eat? Click here!</a>
+<%= link_to restaurant_path(@random_restaurant.id), class: "btn-warning" do %>
+  Can't decide where to eat? Click here!
+<% end %>
 
 <div class="row">
   <% @restaurants.each do |restaurant| %>
