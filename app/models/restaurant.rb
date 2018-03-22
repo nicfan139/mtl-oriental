@@ -5,4 +5,7 @@ class Restaurant < ApplicationRecord
   validates :category, presence: true, inclusion: { in: ["Chinese", "Japanese", "Korean", "Vietnamese", "Indian", "Other"] }
   validates :address, presence: true, length: { minimum: 10 }
   validates :district, presence: true
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

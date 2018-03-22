@@ -5,9 +5,17 @@
   <% @restaurants.each do |restaurant| %>
     <div class="col-sm-6 col-md-3">
       <%= link_to restaurant_path(restaurant.id) do %>
-        <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('<%= cl_image_path restaurant.photo %>'); background-size: cover; height: 200px">
-          <p class="category"><%= restaurant.category.upcase %></p>
-        </div>
+        <% if restaurant.photo? %>
+          <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('<%= cl_image_path restaurant.photo %>'); background-size: cover; height: 200px">
+            <h1><%= restaurant.name.upcase %></h1>
+            <p><em><%= restaurant.category %></em></p>
+          </div>
+        <% else %>
+          <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('https://d30y9cdsu7xlg0.cloudfront.net/png/82812-200.png'); background-size: cover; height: 200px">
+            <h1><%= restaurant.name.upcase %></h1>
+            <p><em><%= restaurant.category %></em></p>
+          </div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
