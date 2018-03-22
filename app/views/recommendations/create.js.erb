@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newRecommendationForm = document.getElementById('new_recommendation');
+  newRecommendationForm.innerHTML = innerHTML;
+}
+
+function addRecommendation(recommendationsHTML) {
+  const recommendations = document.getElementById('recommendations');
+  recommendations.insertAdjacentHTML('beforeend', recommendationsHTML);
+}
+
+<% if @recommendation.errors.any? %>
+  refreshForm('<%= j render "recommendations/form", restaurant: @restaurant, recommendation: @recommendation %>');
+<% else %>
+  addRecommendation('<%= j render "recommendations/show", recommendation: @recommendation %>');
+  refreshForm('<%= j render "recommendations/form", restaurant: @restaurant, recommendation: Recommendation.new %>');
+<% end %>

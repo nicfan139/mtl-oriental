@@ -21,11 +21,6 @@
       <hr>
     <% end %>
     <div>
-      <%= link_to new_restaurant_review_path(@restaurant) do %>
-        Add a review!
-      <% end %>
-    </div>
-    <div>
       <%= link_to root_path do %>
         Back to restaurants
       <% end %>
@@ -44,3 +39,20 @@
     <% end %>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <h2>What's good here?</h2>
+    <div id="recommendations">
+      <ul>
+        <% @restaurant.recommendations.each do |recommendation| %>
+          <li><%= recommendation.content %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <%= render 'recommendations/form', restaurant: @restaurant, recommendation: @recommendation %>
+  </div>
+</div>
+

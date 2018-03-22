@@ -5,7 +5,7 @@ class RestaurantsController < ApplicationController
     @admin = current_user.admin
     # authorize @restaurant
 
-    @reviews = Review.all
+    @recommendation = Recommendation.new
 
     @marker = {
         lat: @restaurant.latitude,

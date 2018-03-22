@@ -11,8 +11,6 @@
       ] %>
     <%= f.input :address %>
     <%= f.input :district, required: true, collection: [
-      "Ahuntsic-Cartierville",
-      "Anjou",
       "Atwater",
       "Chinatown",
       "Concordia",
@@ -23,25 +21,14 @@
       "Notre-Dame-de-Grace",
       "Lachine",
       "LaSalle",
-      "Le Plateau",
       "Le Sud-Ouest",
-      "Sainte-Genevive",
-      "Mercier",
-      "Hochelaga-Maisonneuve",
       "Mile-End",
       "Namur",
       "Outremont",
       "Parc-Extension",
-      "Pierrefonds-Roxboro",
-      "Rivire-des-Prairies",
-      "Pointe-aux-Trembles",
-      "Rosemont",
-      "La Petite-Patrie",
-      "Saint-Laurent",
-      "Saint-Leonard",
-      "Saint-Michel",
-      "Verdun",
-      "Villeray"] %>
+      "Place-des-Arts",
+      "Plateau",
+      ] %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
     <hr>

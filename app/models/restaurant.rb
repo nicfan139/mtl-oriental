@@ -1,5 +1,6 @@
 class Restaurant < ApplicationRecord
   mount_uploader :photo, PhotoUploader
+  has_many :recommendations, dependent: :destroy
 
   validates :name, presence: true
   validates :category, presence: true, inclusion: { in: ["Chinese", "Japanese", "Korean", "Vietnamese", "Indian", "Other"] }
