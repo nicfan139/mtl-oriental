@@ -1,1 +1,63 @@
-// Specific CSS for your home-page
+.home-title {
+  text-align: center;
+  margin: 15px auto;
+  h1 {
+    font-weight: bold;
+  }
+}
+
+.home-button {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 5px auto;
+  a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 30px;
+    color: white;
+    background-color: crimson;
+    text-decoration: none;
+    transition: all 0.7s;
+    font-size: 115%;
+    font-weight: 700;
+    box-shadow: 0px 2px 3px 1px rgba(50,50,50,0.1);
+    &:hover {
+      text-decoration: none;
+      font-size: 120%;
+      box-shadow: 0px 2px 3px 1px rgba(50,50,50,0.5);
+    }
+  }
+}
+
+.home-row {
+  width: 95vw;
+  margin: 20px auto;
+}
+
+.home-card {
+  color: whitesmoke;
+  margin: 10px auto 30px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 0px 2px 3px 2px rgba(50,50,50,0.3);
+  transition: box-shadow 0.5s;
+  &:hover {
+    box-shadow: 0px 2px 5px 3px rgba(50,50,50,0.9);
+  }
+}
+
+.home-cardname {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0px 0px 0px;
+  margin: 0px 10px 0px;
+  h2 {
+    font-size: 30px;
+    margin: 0px;
+  }
+  i {
+    font-size: 36px;
+  }
+}

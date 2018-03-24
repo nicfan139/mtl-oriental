@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @restaurants = Restaurant.all
-
     @random_restaurant = @restaurants.sample
   end
 end
