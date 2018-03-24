@@ -1,0 +1,19 @@
+.login-background {
+  background-image: url('login_background.jpg');
+  background-size: cover;
+  height: 90vh;
+}
+
+.login-form {
+  z-index: 99;
+  opacity: 0.9;
+  height: 90vh;
+  width: 35vw;
+  padding: 20px 40px;
+  float: right;
+  background-color: rgb(250, 250, 250);
+  h2 {
+    margin: 10px 0px 10px 0px;
+    font-weight: bold;
+  }
+}
