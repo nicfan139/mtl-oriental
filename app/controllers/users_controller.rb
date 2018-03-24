@@ -5,5 +5,7 @@ class UsersController < ApplicationController
     # authorize @user
     # @is_current_user = @user == current_user
     @admin = current_user.admin
+
+    @restaurants = Restaurant.all
   end
 end

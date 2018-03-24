@@ -2,7 +2,7 @@
 
 <div class="home-title">
   <h1>Welcome to MTL Oriental!</h1>
-  <p>A directory of GOOD Asian restaurants in Montreal. See what's great to eat at each place!</p>
+  <p>A directory of <strong><em>GOOD</em></strong> Asian restaurants in Montreal. See what's great to eat at each place!</p>
 </div>
 
 <div class="home-button">
@@ -39,8 +39,25 @@
           </div>
         <% else %>
           <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('https://d30y9cdsu7xlg0.cloudfront.net/png/82812-200.png'); background-size: cover; height: 200px" class="home-card">
-            <h2><%= restaurant.name %></h2>
-            <p><em><%= restaurant.category.upcase %></em></p>
+            <div class="home-cardname">
+              <h2><%= restaurant.name %></h2>
+              <% case restaurant.category %>
+                <% when "Chinese" %>
+                  <i class="em em-cn"></i>
+                <% when "Japanese" %>
+                  <i class="em em-jp"></i>
+                <% when "Korean" %>
+                  <i class="em em-kr"></i>
+                <% when "Indian" %>
+                  <i class="em em-flag-in"></i>
+                <% when "Vietnamese" %>
+                  <i class="em em-flag-vn"></i>
+                <% when "Thai" %>
+                  <i class="em em-flag-th"></i>
+                <% else %>
+                  <i class="em em-earth_asia"></i>
+              <% end %>
+            </div>
           </div>
         <% end %>
       <% end %>
