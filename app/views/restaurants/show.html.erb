@@ -65,7 +65,9 @@
         <div id="recommendations">
           <ul>
             <% @restaurant.recommendations.each do |recommendation| %>
-              <li><%= recommendation.content %></li>
+              <li>
+                <%= recommendation.content %>
+              </li>
             <% end %>
           </ul>
         </div>

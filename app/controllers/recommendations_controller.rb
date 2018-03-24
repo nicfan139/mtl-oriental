@@ -16,6 +16,16 @@ class RecommendationsController < ApplicationController
     end
   end
 
+  def destroy
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @recommendation.restaurant = @restaurant
+    @recommendation.destroy
+    respond_to do |format|
+      format.html { redirect_to restaurant_path(@restaurant), notice: 'Review was successfully deleted.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
 
   def recommendation_params
