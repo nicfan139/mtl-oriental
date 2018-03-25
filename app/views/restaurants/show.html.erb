@@ -1,7 +1,7 @@
 <div class="resto-container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="info-box box-divider box-shadow">
+      <div class="info-box resto-info box-divider box-shadow">
         <h1><%= @restaurant.name %></h1>
         <p>
           <% case @restaurant.category %>
@@ -20,23 +20,10 @@
             <% else %>
               <i class="em em-earth_asia"></i>
           <% end %>
-          <em><%= @restaurant.category %></em>
+          <em><%= @restaurant.category %>&nbsp;Cuisine</em>
         </p>
-        <p><%= @restaurant.address %></p>
-        <p><strong>District:</strong>&nbsp;<%= @restaurant.district %></p>
-        <% if @admin %>
-          <p><strong>Admin Options:</strong></p>
-          <div>
-            <%= link_to edit_restaurant_path(@restaurant) do %>
-              <i class="fas fa-edit"></i>&nbsp;Edit
-            <% end %>
-          </div>
-          <div>
-            <%= link_to restaurant_path, method: :delete do %>
-              <i class="fas fa-trash-alt"></i>&nbsp;&nbsp;Delete
-            <% end %>
-          </div>
-        <% end %>
+        <p><strong><i class="fas fa-map-marker-alt"></i></strong>&nbsp;&nbsp;<%= @restaurant.address %></p>
+        <p><strong><i class="fas fa-map"></i></strong>&nbsp;&nbsp;<%= @restaurant.district %></p>
         <div>
           <%= link_to root_path do %>
             <i class="fas fa-caret-square-left"></i>&nbsp;&nbsp;Back to restaurants

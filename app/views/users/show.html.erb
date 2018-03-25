@@ -1,54 +1,56 @@
-<% if @admin %>
-  <h1><strong>Welcome to the Admin Panel, <%= current_user.first_name %>!</strong></h1>
-  <%= link_to root_path do %>
-    <i class="fas fa-caret-square-left"></i>&nbsp;Return to homepage
+<div class="admin-container">
+  <% if @admin %>
+    <h1><strong>Welcome to the Admin Panel, <%= current_user.first_name %>!</strong></h1>
+    <%= link_to root_path do %>
+      <i class="fas fa-caret-square-left"></i>&nbsp;Return to homepage
+    <% end %>
+    <div class="row">
+
+      <!-- Modify Restaurant -->
+      <div class="col-sm-6">
+        <h2>Restaurant List - <em><%= @restaurants.count %> total</em></h2>
+        <%= link_to new_restaurant_path do %>
+          <p>Add a restaurant</p>
+        <% end %>
+        <ul>
+          <% @restaurants.each do |restaurant| %>
+            <li>
+              db_id#<%= restaurant.id %>&nbsp;-&nbsp;
+              <%= link_to restaurant_path(restaurant.id) do %>
+                <%= restaurant.name %>
+              <% end %>
+              &nbsp;|&nbsp;
+              <%= restaurant.category %>
+              &nbsp;|&nbsp;
+              <%= link_to edit_restaurant_path(restaurant.id) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              &nbsp;
+              <%= link_to restaurant_path(restaurant.id), method: :delete do %>
+                <i class="fas fa-trash-alt"></i>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+
+      <!-- Modify Users -->
+      <div class="col-sm-6">
+        <h2>Users</h2>
+        <ul>
+          <% @all_users.each do |user| %>
+            <li>
+              <h3><%= user.first_name %>&nbsp;<%= user.last_name %></h3>
+              <p><em><strong>Email:</strong>&nbsp;<%= user.email %></em></p>
+              <% if user.admin %>
+                <p>ADMIN</p>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% else %>
+    <h1>My Profile</h1>
   <% end %>
-  <div class="row">
-
-    <!-- Modify Restaurant -->
-    <div class="col-sm-6">
-      <h2>Restaurant List - <em><%= @restaurants.count %> total</em></h2>
-      <%= link_to new_restaurant_path do %>
-        <p>Add a restaurant</p>
-      <% end %>
-      <ul>
-        <% @restaurants.each do |restaurant| %>
-          <li>
-            db_id#<%= restaurant.id %>&nbsp;-&nbsp;
-            <%= link_to restaurant_path(restaurant.id) do %>
-              <%= restaurant.name %>
-            <% end %>
-            &nbsp;|&nbsp;
-            <%= restaurant.category %>
-            &nbsp;|&nbsp;
-            <%= link_to edit_restaurant_path(restaurant.id) do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
-            &nbsp;
-            <%= link_to restaurant_path(restaurant.id), method: :delete do %>
-              <i class="fas fa-trash-alt"></i>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-
-    <!-- Modify Users -->
-    <div class="col-sm-6">
-      <h2>Users</h2>
-      <ul>
-        <% @all_users.each do |user| %>
-          <li>
-            <h3><%= user.first_name %>&nbsp;<%= user.last_name %></h3>
-            <p><em><strong>Email:</strong>&nbsp;<%= user.email %></em></p>
-            <% if user.admin %>
-              <p>ADMIN</p>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
-<% else %>
-  <h1>My Profile</h1>
-<% end %>
+</div>

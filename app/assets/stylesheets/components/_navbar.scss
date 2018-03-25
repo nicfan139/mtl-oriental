@@ -8,6 +8,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100vw;
+  z-index: 99;
+  top: 0;
 }
 
 /* Logo */
@@ -28,6 +32,14 @@
     opacity: 1;
   }
 }
+
+
+/* Title */
+.navbar-wagon > h1 {
+  margin: 0px;
+  font-family: 'Permanent Marker', cursive;
+}
+
 
 /* Right section */
 .navbar-wagon-right {

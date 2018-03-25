@@ -1,74 +1,74 @@
-<!-- Render Gmap here? -->
+<div class="home-container">
+  <div class="home-title">
+    <h2>Welcome to this directory of <strong><em>GOOD</em></strong> Asian restaurants in Montreal.</h2>
+    <h2>See what's great to eat at each place!</h2>
+  </div>
 
-<div class="home-title">
-  <h1>Welcome to MTL Oriental!</h1>
-  <p>A directory of <strong><em>GOOD</em></strong> Asian restaurants in Montreal. See what's great to eat at each place!</p>
-</div>
+  <div class="home-button">
+    <%= link_to restaurant_path(@random_restaurant.id) do %>
+      "I can't decide. Choose for me!"
+    <% end %>
+  </div>
 
-<div class="home-button">
-  <%= link_to restaurant_path(@random_restaurant.id) do %>
-    Can't decide where to eat? Click here!
-  <% end %>
-</div>
-
-<div class="home-row">
-  <% @restaurants.each do |restaurant| %>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <%= link_to restaurant_path(restaurant.id) do %>
-        <% if restaurant.photo? %>
-          <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('<%= cl_image_path restaurant.photo %>'); background-size: cover; height: 200px" class="home-card">
-            <div class="home-cardname">
-              <h2><%= restaurant.name %></h2>
-              <% case restaurant.category %>
-                <% when "Chinese" %>
-                  <i class="em em-cn"></i>
-                <% when "Japanese" %>
-                  <i class="em em-jp"></i>
-                <% when "Korean" %>
-                  <i class="em em-kr"></i>
-                <% when "Indian" %>
-                  <i class="em em-flag-in"></i>
-                <% when "Vietnamese" %>
-                  <i class="em em-flag-vn"></i>
-                <% when "Thai" %>
-                  <i class="em em-flag-th"></i>
-                <% else %>
-                  <i class="em em-earth_asia"></i>
-              <% end %>
+  <div class="home-row">
+    <% @restaurants.each do |restaurant| %>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <%= link_to restaurant_path(restaurant.id) do %>
+          <% if restaurant.photo? %>
+            <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('<%= cl_image_path restaurant.photo %>'); background-size: cover; height: 200px" class="home-card">
+              <div class="home-cardname">
+                <h2><%= restaurant.name %></h2>
+                <% case restaurant.category %>
+                  <% when "Chinese" %>
+                    <i class="em em-cn"></i>
+                  <% when "Japanese" %>
+                    <i class="em em-jp"></i>
+                  <% when "Korean" %>
+                    <i class="em em-kr"></i>
+                  <% when "Indian" %>
+                    <i class="em em-flag-in"></i>
+                  <% when "Vietnamese" %>
+                    <i class="em em-flag-vn"></i>
+                  <% when "Thai" %>
+                    <i class="em em-flag-th"></i>
+                  <% else %>
+                    <i class="em em-earth_asia"></i>
+                <% end %>
+              </div>
             </div>
-          </div>
-        <% else %>
-          <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('https://d30y9cdsu7xlg0.cloudfront.net/png/82812-200.png'); background-size: cover; height: 200px" class="home-card">
-            <div class="home-cardname">
-              <h2><%= restaurant.name %></h2>
-              <% case restaurant.category %>
-                <% when "Chinese" %>
-                  <i class="em em-cn"></i>
-                <% when "Japanese" %>
-                  <i class="em em-jp"></i>
-                <% when "Korean" %>
-                  <i class="em em-kr"></i>
-                <% when "Indian" %>
-                  <i class="em em-flag-in"></i>
-                <% when "Vietnamese" %>
-                  <i class="em em-flag-vn"></i>
-                <% when "Thai" %>
-                  <i class="em em-flag-th"></i>
-                <% else %>
-                  <i class="em em-earth_asia"></i>
-              <% end %>
+          <% else %>
+            <div style="background-image:linear-gradient(-225deg, rgba(0,0,0,0.4), rgba(0,0,0,0)), url('https://d30y9cdsu7xlg0.cloudfront.net/png/82812-200.png'); background-size: cover; height: 200px" class="home-card">
+              <div class="home-cardname">
+                <h2><%= restaurant.name %></h2>
+                <% case restaurant.category %>
+                  <% when "Chinese" %>
+                    <i class="em em-cn"></i>
+                  <% when "Japanese" %>
+                    <i class="em em-jp"></i>
+                  <% when "Korean" %>
+                    <i class="em em-kr"></i>
+                  <% when "Indian" %>
+                    <i class="em em-flag-in"></i>
+                  <% when "Vietnamese" %>
+                    <i class="em em-flag-vn"></i>
+                  <% when "Thai" %>
+                    <i class="em em-flag-th"></i>
+                  <% else %>
+                    <i class="em em-earth_asia"></i>
+                <% end %>
+              </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+      </div>
+    <% end %>
+  </div>
 
-<div
-  id="home-map"
-  style="width: 100%;
-  height: 600px;
-  margin: 20px auto 0px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+  <div
+    id="home-map"
+    style="width: 100%;
+    height: 600px;
+    margin: 20px auto 0px;"
+    data-markers="<%= @markers.to_json %>"
+  ></div>
+</div>

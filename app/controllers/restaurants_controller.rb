@@ -1,8 +1,8 @@
 class RestaurantsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show]
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    @admin = current_user.admin
     # authorize @restaurant
 
     @recommendation = Recommendation.new
