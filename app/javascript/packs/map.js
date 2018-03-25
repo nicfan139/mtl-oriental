@@ -1,29 +1,27 @@
 import GMaps from 'gmaps/gmaps.js';
 
-var mapElement = document.getElementById('map');
+
+const homeMap = document.getElementById('home-map');
+if (homeMap) { // don't try to build a map if there's no div#map to inject in
+  const map = new GMaps({ el: '#home-map', lat: 45.5022201, lng: -73.5945906 });
+  const markers = JSON.parse(homeMap.dataset.markers);
+  map.addMarkers(markers);
+  if (markers.length === 0) {
+    map.setZoom(2);
+  } else if (markers.length === 1) {
+    map.setCenter(markers[0].lat, markers[0].lng);
+    map.setZoom(14);
+  } else {
+    map.fitLatLngBounds(markers);
+  }
+}
+
+
+const mapElement = document.getElementById('map');
 if (mapElement) { // don't try to build a map if there's no div#map to inject in
 
   var marker = JSON.parse(mapElement.dataset.marker);
   var map = new GMaps({ el: '#map', lat: marker.lat, lng: marker.lng});
   map.addMarker(marker);
   map.setZoom(16);
-
-//   var directionsDisplay = new google.maps.DirectionsRenderer();
-//   var directionsService = new google.maps.DirectionsService();
-
-//   function calcRoute() {
-//     var origin = new google.maps.LatLng(45.5106021, -73.5785065);
-//     var destination = new google.maps.LatLng(marker.lat, marker.lng);
-//     var request = {
-//         origin:      origin,
-//         destination: destination,
-//         travelMode:  google.maps.TravelMode.DRIVING
-//     };
-//     directionsService.route(request, (response, status) => {
-//       if (status == google.maps.DirectionsStatus.OK) {
-//         directionsDisplay.setDirections(response);
-//       }
-//     });
-//   }
-//   calcRoute();
 }

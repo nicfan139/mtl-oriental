@@ -1,0 +1,17 @@
+.mapbox {
+  text-align: center;
+  color: black;
+  opacity: 0.8;
+  transition: all 0.5s;
+  h2 {
+    margin: 0px auto;
+  }
+  p {
+    font-size: 16px;
+    margin: 5px auto;
+  }
+  &:hover {
+    color: crimson;
+    opacity: 1;
+  }
+}

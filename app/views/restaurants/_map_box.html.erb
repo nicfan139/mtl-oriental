@@ -1,0 +1,25 @@
+<%= link_to restaurant_path(restaurant.id) do %>
+  <div class="mapbox">
+    <h2>
+      <% case restaurant.category %>
+        <% when "Chinese" %>
+          <i class="em em-cn"></i>
+        <% when "Japanese" %>
+          <i class="em em-jp"></i>
+        <% when "Korean" %>
+          <i class="em em-kr"></i>
+        <% when "Indian" %>
+          <i class="em em-flag-in"></i>
+        <% when "Vietnamese" %>
+          <i class="em em-flag-vn"></i>
+        <% when "Thai" %>
+          <i class="em em-flag-th"></i>
+        <% else %>
+          <i class="em em-earth_asia"></i>
+      <% end %>
+      &nbsp;
+      <%= restaurant.name %>
+    </h2>
+    <p><%= restaurant.address %></p>
+  </div>
+<% end %>
