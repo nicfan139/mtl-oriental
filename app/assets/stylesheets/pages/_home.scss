@@ -1,8 +1,11 @@
 .home-container {
-  margin: 100px auto 15px;
+  margin: 70px auto 15px;
+  width: 100vw;
+  background-image: linear-gradient(rgba(250, 250, 250, 0.75), rgba(250, 250, 250, 0.75)), url('https://res.cloudinary.com/dqyrzcfez/image/upload/v1522093667/home_background.jpg');
 }
 
 .home-title {
+  padding-top: 20px;
   text-align: center;
   h2 {
     font-weight: bold;
