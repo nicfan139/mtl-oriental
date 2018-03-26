@@ -11,6 +11,12 @@ class RestaurantsController < ApplicationController
         lat: @restaurant.latitude,
         lng: @restaurant.longitude
       }
+
+    if current_user
+      @signed_in = true
+    else
+      @signed_in = false
+    end
   end
 
   def new

@@ -62,8 +62,21 @@
     </div>
     <div class="col-sm-6">
       <div class="info-box box-shadow">
-        <p>Let others know what's good here at <%= @restaurant.name %>!</p>
-        <%= render 'recommendations/form', restaurant: @restaurant, recommendation: @recommendation %>
+        <% if @signed_in %>
+          <p>Let others know what's good here at <%= @restaurant.name %>!</p>
+          <%= render 'recommendations/form', restaurant: @restaurant, recommendation: @recommendation %>
+        <% else %>
+          <h2>
+            <%= link_to new_user_session_path do %>
+              <strong style="color: crimson; opacity: 0.9;"><em>Login</em></strong>
+            <% end %>
+            or
+            <%= link_to new_user_registration_path do %>
+              <strong strong style="color: crimson; opacity: 0.9;"><em>sign up</em></strong>
+            <% end %>
+            to add a dish to the list!
+          </h2>
+        <% end %>
       </div>
     </div>
   </div>
