@@ -16,3 +16,14 @@
     font-weight: bold;
   }
 }
+@media (max-width: 768px) {
+  .login-form {
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .login-form {
+    font-size: 90%;
+  }
+}

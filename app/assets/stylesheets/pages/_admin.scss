@@ -2,3 +2,8 @@
   width: 90vw;
   margin: 90px auto 30px;
 }
+@media (max-width: 400px) {
+  .admin-container {
+    font-size: 80%;
+  }
+}

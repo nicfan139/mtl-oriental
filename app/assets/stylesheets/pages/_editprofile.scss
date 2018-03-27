@@ -14,3 +14,14 @@
     font-weight: bold;
   }
 }
+@media (max-width: 768px) {
+  .editprofile-form {
+    width: 100vw;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 400px) {
+  .editprofile-form {
+    font-size: 90%;
+  }
+}
