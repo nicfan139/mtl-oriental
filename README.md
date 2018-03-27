@@ -1,1 +1,18 @@
-Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
+# Pacifico
+
+Self-built project using Ruby on Rails for fun. Created a little directory of good Asian restaurants in the Montreal area.
+The webapp is a work-in progress!
+
+## Tools & Technologies used:
+
+* HTML5
+* CSS3
+* SASS/SCSS
+* JavaScript
+* Ruby on Rails
+* PostgreSQL
+* Git
+* Cloudinary
+* Heroku
+* Google Maps JavaScript API
+* Google Maps Geocoding API
